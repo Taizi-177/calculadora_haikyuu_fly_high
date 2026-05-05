@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+}
+
+.container-info {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+}
+
+.cabecalho-info {
+  margin-bottom: 32px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.cabecalho-info h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 32px;
+}
+
+.secao-info {
+  margin-bottom: 32px;
+}
+
+.secao-info h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.lista-info {
+  padding-left: 24px;
+}
+
+.lista-info li {
+  margin-bottom: 12px;
+}
+
+.lista-letras {
+  margin-top: 10px;
+  padding-left: 28px;
+  list-style-type: lower-alpha;
+}
+
+.lista-letras li {
+  margin-bottom: 6px;
+}
+
+.tabela-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+.tabela-recompensas {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.tabela-recompensas th,
+.tabela-recompensas td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabela-recompensas th {
+  background-color: #eeeeee;
+  font-weight: bold;
+}
+
+.tabela-recompensas td:first-child,
+.tabela-recompensas td:nth-child(2),
+.tabela-recompensas td:nth-child(3) {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.rodape-info {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.rodape-info a {
+  color: #222;
+  text-decoration: underline;
+}
+
+.rodape-info a:hover {
+  color: #555;
+}

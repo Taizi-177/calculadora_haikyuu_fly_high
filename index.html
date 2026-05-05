@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calculadora de Recompensas - Haikyuu Fly High</title>
+
+  <!-- Arquivo CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <h1 class="titulo-principal">
+      Calculadora de Recompensas - Haikyuu Fly High
+    </h1>
+
+    <form class="formulario-calculadora">
+
+      <!-- Situação atual -->
+      <fieldset class="secao secao-situacao">
+        <legend class="titulo-secao">
+          📊 Sua Situação Atual
+        </legend>
+
+        <div class="campo">
+          <label for="diamantes-atuais">Diamantes Atuais:</label>
+          <input 
+            type="number" 
+            id="diamantes-atuais" 
+            name="diamantesAtuais" 
+            min="0"
+          >
+        </div>
+
+        <div class="campo">
+          <label for="tickets-supremo-atuais">Tickets de Supremo Atuais:</label>
+          <input 
+            type="number" 
+            id="tickets-supremo-atuais" 
+            name="ticketsSupremoAtuais" 
+            min="0"
+          >
+        </div>
+
+        <div class="campo">
+          <label for="tickets-memoria-atuais">Tickets de Memória de Supremo Atuais:</label>
+          <input 
+            type="number" 
+            id="tickets-memoria-atuais" 
+            name="ticketsMemoriaAtuais" 
+            min="0"
+          >
+        </div>
+      </fieldset>
+
+      <!-- Datas -->
+      <fieldset class="secao secao-datas">
+        <legend class="titulo-secao">
+          🗓️ Datas
+        </legend>
+
+        <div class="campo">
+          <label for="data-inicial">Data Inicial:</label>
+          <input 
+            type="date" 
+            id="data-inicial" 
+            name="dataInicial"
+          >
+        </div>
+
+        <div class="campo">
+          <label for="data-chegada-personagem">Data de Chegada do Personagem:</label>
+          <input 
+            type="date" 
+            id="data-chegada-personagem" 
+            name="dataChegadaPersonagem"
+          >
+        </div>
+      </fieldset>
+
+      <!-- Objetivo -->
+      <fieldset class="secao secao-objetivo">
+        <legend class="titulo-secao">
+          🎯 Objetivo
+        </legend>
+
+        <div class="campo campo-com-observacao">
+          <label for="giros-supremo">
+            Quantos giros você quer dar no recrutar supremo?
+          </label>
+
+          <input 
+            type="number" 
+            id="giros-supremo" 
+            name="girosSupremo" 
+            min="0"
+          >
+
+          <span class="observacao">
+            Na memória, será considerado 100 giros sempre
+          </span>
+        </div>
+
+        <div class="campo campo-com-observacao">
+          <label for="quantidade-banners">
+            Quantos banners terão até a chegada do personagem?
+          </label>
+
+          <input 
+            type="number" 
+            id="quantidade-banners" 
+            name="quantidadeBanners" 
+            min="0"
+          >
+
+            <span class="observacao">
+                Para as recompensas de cada banner.
+            </span>
+        </div>
+      </fieldset>
+
+      <!-- Botão -->
+        <div class="area-botao">
+            <button type="button" id="botao-calcular" class="botao-calcular">
+                Calcular
+            </button>
+        </div>
+
+        <section class="secao secao-resultado" id="secao-total-obtido" style="display: none;">
+            <h2 class="titulo-resultado">Total Obtido</h2>
+
+            <p>
+                Diamantes ganhos:
+                <span id="resultado-diamantes">0</span>
+            </p>
+
+            <p>
+                Tickets de Memória ganhos:
+                <span id="resultado-tickets-memoria">0</span>
+            </p>
+
+            <p>
+                Tickets Supremo ganhos:
+                <span id="resultado-tickets-supremo">0</span>
+            </p>
+        </section>
+
+        <section class="secao secao-total-final" id="secao-saldo-total" style="display: none;">
+            <h2 class="titulo-resultado">Saldo Total até SP</h2>
+
+            <p>
+                Diamantes totais:
+                <span id="total-diamantes">0</span>
+            </p>
+
+            <p>
+                Tickets de Memória totais:
+                <span id="total-tickets-memoria">0</span>
+            </p>
+
+            <p>
+                Tickets Supremo totais:
+                <span id="total-tickets-supremo">0</span>
+            </p>
+        </section>
+
+        <section class="secao secao-tickets-gastos" id="secao-tickets-gastos" style="display: none;">
+            <h2 class="titulo-resultado">Tickets Gastos</h2>
+
+            <p>
+                Tickets Supremo gastos:
+                <span id="tickets-supremo-gastos">0</span>
+            </p>
+
+            <p>
+                Tickets de Memória gastos:
+                <span id="tickets-memoria-gastos">0</span>
+            </p>
+        </section>
+
+        <section class="secao secao-tickets-restantes" id="secao-tickets-restantes" style="display: none;">
+            <h2 class="titulo-resultado">Tickets Restantes</h2>
+
+            <p>
+                Tickets Supremo restantes:
+                <span id="tickets-supremo-restantes">0</span>
+            </p>
+
+            <p>
+                Tickets de Memória restantes:
+                <span id="tickets-memoria-restantes">0</span>
+            </p>
+        </section>
+
+        <section class="secao secao-compra-tickets" id="secao-compra-tickets" style="display: none;">
+            <h2>Você Consegue, com a Compra de Tickets</h2>
+
+            <p>
+                Tickets Supremo faltantes:
+                <span id="tickets-supremo-faltantes">0</span>
+            </p>
+
+            <p>
+                Tickets de Memória faltantes:
+                <span id="tickets-memoria-faltantes">0</span>
+            </p>
+
+            <p>
+                Diamantes necessários para Tickets Supremo:
+                <span id="diamantes-necessarios-supremo">0</span>
+            </p>
+
+            <p>
+                Diamantes necessários para Tickets de Memória:
+                <span id="diamantes-necessarios-memoria">0</span>
+            </p>
+
+            <p>
+                Diamantes necessários no total:
+                <span id="diamantes-necessarios-tickets">0</span>
+            </p>
+
+            <p>
+                Diamantes restantes após compra:
+                <span id="diamantes-restantes-apos-compra">0</span>
+            </p>
+        </section>
+
+        <section class="secao secao-sem-recursos" id="secao-sem-recursos" style="display: none;">
+            <h2 class="titulo-resultado">Recursos Insuficientes</h2>
+
+            <p>
+                Você não tem tickets e diamantes suficientes para a quantidade de giros desejada.
+            </p>
+
+            <p>
+                Diamantes que faltam:
+                <span id="diamantes-faltantes">0</span>
+            </p>
+
+            <p>
+                Máximo de giros possíveis no Supremo:
+                <span id="maximo-giros-possiveis">0</span>
+            </p>
+
+            <p>
+                Máximo de giros possíveis na Memória:
+                <span id="maximo-giros-memoria-possiveis">0</span>
+            </p>
+        
+        </section>
+
+    </form>
+
+  </main>
+
+    <footer class="rodape">
+        <p>
+            Contato:
+            <a href="mailto:seuemail@email.com">
+                taizisilveira177@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <a href="info.html" target="_blank">
+                Informações
+            </a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
