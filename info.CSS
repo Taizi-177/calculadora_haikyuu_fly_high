@@ -4,48 +4,59 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 40px 20px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f5f5f5;
   color: #222;
   line-height: 1.6;
 }
 
-.container-info {
+/* Container principal */
+.container-info,
+main {
   max-width: 1100px;
-  margin: 40px auto;
+  margin: 0 auto;
   padding: 32px;
   background-color: #ffffff;
   border: 1px solid #ddd;
 }
 
-.cabecalho-info {
+/* Cabeçalho */
+.cabecalho-info,
+header {
   margin-bottom: 32px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 20px;
 }
 
-.cabecalho-info h1 {
+.cabecalho-info h1,
+h1 {
   margin-top: 0;
   margin-bottom: 12px;
   font-size: 32px;
 }
 
-.secao-info {
+/* Seções */
+.secao-info,
+section {
   margin-bottom: 32px;
 }
 
-.secao-info h2 {
+.secao-info h2,
+h2 {
   margin-bottom: 12px;
   font-size: 22px;
 }
 
-.lista-info {
+/* Listas */
+.lista-info,
+ol {
   padding-left: 24px;
 }
 
-.lista-info li {
-  margin-bottom: 12px;
+.lista-info li,
+ol li {
+  margin-bottom: 10px;
 }
 
 .lista-letras {
@@ -58,49 +69,107 @@ body {
   margin-bottom: 6px;
 }
 
+/* Área da tabela */
 .tabela-container {
   width: 100%;
   overflow-x: auto;
   margin-top: 16px;
 }
 
-.tabela-recompensas {
+/* Tabela */
+.tabela-recompensas,
+table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff;
+  background-color: #ffffff;
+  margin-top: 16px;
+  font-size: 15px;
 }
 
+/* Células */
 .tabela-recompensas th,
-.tabela-recompensas td {
+.tabela-recompensas td,
+table th,
+table td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
   vertical-align: top;
 }
 
-.tabela-recompensas th {
+/* Cabeçalho da tabela */
+.tabela-recompensas th,
+table th {
   background-color: #eeeeee;
   font-weight: bold;
 }
 
+/* Colunas numéricas */
 .tabela-recompensas td:first-child,
 .tabela-recompensas td:nth-child(2),
-.tabela-recompensas td:nth-child(3) {
+.tabela-recompensas td:nth-child(3),
+table td:first-child,
+table td:nth-child(2),
+table td:nth-child(3) {
   text-align: center;
   white-space: nowrap;
 }
 
-.rodape-info {
+/* Ajuste da coluna de descrição */
+.tabela-recompensas td:last-child,
+table td:last-child {
+  min-width: 350px;
+}
+
+/* Rodapé */
+.rodape-info,
+footer {
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid #ddd;
 }
 
-.rodape-info a {
+.rodape-info a,
+footer a {
   color: #222;
   text-decoration: underline;
 }
 
-.rodape-info a:hover {
+.rodape-info a:hover,
+footer a:hover {
   color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .container-info,
+  main {
+    padding: 20px;
+  }
+
+  h1,
+  .cabecalho-info h1 {
+    font-size: 26px;
+  }
+
+  h2,
+  .secao-info h2 {
+    font-size: 20px;
+  }
+
+  table,
+  .tabela-recompensas {
+    font-size: 14px;
+  }
+
+  table th,
+  table td,
+  .tabela-recompensas th,
+  .tabela-recompensas td {
+    padding: 8px;
+  }
 }
